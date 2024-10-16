@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Lista de Montadoras</h1>
+    <a href="/create">Adicionar Montadora</a>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>País</th>
+            <th>Ano de Fundação</th>
+            <th>Ações</th>
+        </tr>
+        {% for montadora in montadoras %}
+        <tr>
+            <td>{{ montadora.nome }}</td>
+            <td>{{ montadora.pais }}</td>
+            <td>{{ montadora.ano_fundacao }}</td>
+            <td>
+                <a href="/edit/{{ montadora.id }}">Editar</a> | 
+                <a href="/delete/{{ montadora.id }}">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

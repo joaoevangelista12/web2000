@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Adicionar Montadora</h1>
+    <form action="/create" method="post">
+        <label for="nome">Nome da Montadora</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="pais">País de Origem</label>
+        <input type="text" id="pais" name="pais" required>
+
+        <label for="ano_fundacao">Ano de Fundação</label>
+        <input type="number" id="ano_fundacao" name="ano_fundacao" required>
+
+        <button type="submit">Adicionar</button>
+    </form>
+{% endblock %}
